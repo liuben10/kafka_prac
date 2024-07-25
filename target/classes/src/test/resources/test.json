@@ -1,0 +1,7 @@
+{
+  "specs": [
+    {"name":  "name", "type":  "STRING", "extra":  {"charset":  "alpha"}},
+    {"name": "age","type": "INT", "extra":  {"min": 1, "max":  99}},
+    {"name":  "weight", "type":  "DOUBLE", "extra":  {"min":  100, "max":  400}}
+  ]
+}

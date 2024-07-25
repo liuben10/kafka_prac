@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.HashMap;
 
 public class Hello {
 
@@ -6,7 +7,13 @@ public class Hello {
         try {
             Schema s = Loader.loadFromFile("test.json");
             Generator g = new Generator();
-            System.out.println(g.generate(s));
+            Producer p = new Producer();
+            while(true) {
+                HashMap<String, Object> obj = g.generate(s);
+                System.out.println(obj);
+                p.publish(obj, "test");
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
